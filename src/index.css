@@ -1,0 +1,43 @@
+html {
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+#root {
+  min-height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  font-size: 8px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+}

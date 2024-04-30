@@ -1,0 +1,66 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "plugins": ["react", "@typescript-eslint", "html"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:react/recommended", "airbnb", "airbnb-typescript", "prettier"],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "spaced-comment": "off",
+        "linebreak-style": "off",
+        "import/no-cycle": "off",
+        "no-param-reassign": 0,
+        "react/function-component-definition": [
+          2,
+          {
+            "namedComponents": "arrow-function",
+            "unnamedComponents": "arrow-function"
+          }
+        ],
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "no-case-declarations": "off",
+        "react/require-default-props": "off",
+        "prefer-template": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/control-has-associated-label": "off",
+        "no-nested-ternary": "off",
+        "import/no-extraneous-dependencies": "off",
+        "react/no-array-index-key": "off",
+        "react/jsx-no-useless-fragment": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-shadow": "off",
+        "tailwindcss/classnames-order": "off",
+        "tailwindcss/no-custom-classname": "off",
+        "arrow-body-style": "off",
+        "react/self-closing-comp": "off",
+        "import/no-named-as-default": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "warn",
+        "@typescript-eslint/no-use-before-define": "warn",
+        "prefer-destructuring": "off",
+        "consistent-return": "warn",
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/naming-convention": "off",
+        "react/jsx-props-no-spreading": "off",
+        "no-restricted-syntax": "off",
+        "no-underscore-dangle": "off"
+      }
+    }
+  ]
+}
