@@ -1,0 +1,188 @@
+[
+    {
+        "cityId": "1",
+        "cityName": "New York",
+        "country": "USA",
+        "population": 8398748,
+        "timezone": "EST",
+        "currency": "USD",
+        "language": "English",
+        "costOfLivingIndex": 100,
+        "internetSpeed": {
+            "download": 100,
+            "upload": 50
+        },
+        "coworkingSpaces": [
+            {
+                "name": "WeWork",
+                "address": "123 Wall St, New York, NY",
+                "rating": 4.5
+            },
+            {
+                "name": "Regus",
+                "address": "456 5th Ave, New York, NY",
+                "rating": 4.2
+            }
+        ],
+        "safetyIndex": 75,
+        "climate": {
+            "averageTemperature": 55,
+            "rainfall": 43
+        }
+    },
+    {
+        "cityId": "2",
+        "cityName": "London",
+        "country": "UK",
+        "population": 8982000,
+        "timezone": "GMT",
+        "currency": "GBP",
+        "language": "English",
+        "costOfLivingIndex": 90,
+        "internetSpeed": {
+            "download": 80,
+            "upload": 40
+        },
+        "coworkingSpaces": [
+            {
+                "name": "The Office Group",
+                "address": "1 Poultry, London EC2R 8EJ",
+                "rating": 4.4
+            },
+            {
+                "name": "Regus",
+                "address": "1 Ropemaker St, London EC2Y 9HT",
+                "rating": 4.1
+            }
+        ],
+        "safetyIndex": 85,
+        "climate": {
+            "averageTemperature": 50,
+            "rainfall": 23
+        }
+    },
+    {
+        "cityId": "3",
+        "cityName": "Tokyo",
+        "country": "Japan",
+        "population": 13515271,
+        "timezone": "JST",
+        "currency": "JPY",
+        "language": "Japanese",
+        "costOfLivingIndex": 95,
+        "internetSpeed": {
+            "download": 200,
+            "upload": 100
+        },
+        "coworkingSpaces": [
+            {
+                "name": "Spaces",
+                "address": "2-1-1 Marunouchi, Chiyoda City, Tokyo",
+                "rating": 4.3
+            },
+            {
+                "name": "WeWork",
+                "address": "2-1-2 Otemachi, Chiyoda City, Tokyo",
+                "rating": 4.6
+            }
+        ],
+        "safetyIndex": 90,
+        "climate": {
+            "averageTemperature": 62,
+            "rainfall": 61
+        }
+    },
+    {
+        "cityId": "4",
+        "cityName": "Paris",
+        "country": "France",
+        "population": 2140526,
+        "timezone": "CET",
+        "currency": "EUR",
+        "language": "French",
+        "costOfLivingIndex": 85,
+        "internetSpeed": {
+            "download": 50,
+            "upload": 30
+        },
+        "coworkingSpaces": [
+            {
+                "name": "WeWork",
+                "address": "33 Rue La Fayette, 75009 Paris",
+                "rating": 4.3
+            },
+            {
+                "name": "Spaces",
+                "address": "9 Rue du Quatre Septembre, 75002 Paris",
+                "rating": 4.5
+            }
+        ],
+        "safetyIndex": 80,
+        "climate": {
+            "averageTemperature": 55,
+            "rainfall": 24
+        }
+    },
+    {
+        "cityId": "5",
+        "cityName": "Sydney",
+        "country": "Australia",
+        "population": 5312163,
+        "timezone": "AEST",
+        "currency": "AUD",
+        "language": "English",
+        "costOfLivingIndex": 95,
+        "internetSpeed": {
+            "download": 80,
+            "upload": 40
+        },
+        "coworkingSpaces": [
+            {
+                "name": "Hub Australia",
+                "address": "Level 11/37 York St, Sydney NSW 2000",
+                "rating": 4.4
+            },
+            {
+                "name": "WeWork",
+                "address": "100 Harris St, Pyrmont NSW 2009",
+                "rating": 4.2
+            }
+        ],
+        "safetyIndex": 85,
+        "climate": {
+            "averageTemperature": 70,
+            "rainfall": 47
+        }
+    },
+    {
+        "cityId": "6",
+        "cityName": "Dubai",
+        "country": "UAE",
+        "population": 3137000,
+        "timezone": "GST",
+        "currency": "AED",
+        "language": "Arabic",
+        "costOfLivingIndex": 110,
+        "internetSpeed": {
+            "download": 150,
+            "upload": 100
+        },
+        "coworkingSpaces": [
+            {
+                "name": "Impact Hub",
+                "address": "Saaha Offices B, Souk Al Bahar Bridge, Downtown",
+                "rating": 4.1
+            },
+            {
+                "name": "The Cribb",
+                "address": "Al Fattan Currency House, DIFC",
+                "rating": 4.3
+            }
+        ],
+        "safetyIndex": 75,
+        "climate": {
+            "averageTemperature": 90,
+            "rainfall": 3
+        }
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+      "cityId": "1",
+      "cityName": "New York",
+      "country": "USA"
+    },
+    {
+      "cityId": "2",
+      "cityName": "London",
+      "country": "UK"
+    },
+    {
+      "cityId": "3",
+      "cityName": "Tokyo",
+      "country": "Japan"
+    },
+    {
+      "cityId": "4",
+      "cityName": "Paris",
+      "country": "France"
+    },
+    {
+      "cityId": "5",
+      "cityName": "Sydney",
+      "country": "Australia"
+    },
+    {
+      "cityId": "6",
+      "cityName": "Dubai",
+      "country": "UAE"
+    }
+]
