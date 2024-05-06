@@ -13,7 +13,7 @@ const SelectionCard = ({ title, icon, onClick }: SelectionCardProps) => {
       sx={{
         color: '#0788d9',
         width: '30rem',
-        height: { xs: '5rem', sm: '10rem', md: '10rem' },
+        height: { xs: '5rem', sm: '7rem', md: '7rem' },
         display: 'flex',
         padding: '1rem',
         alignItems: 'center',

@@ -1,4 +1,4 @@
-import { MdArrowForward as ArrowFwd, MdOutlineHelp as HelpIcon, MdOutlinePersonSearch as PersonSearch } from 'react-icons/md';
+import { MdArrowForward as ArrowFwd, MdOutlineHelp as HelpIcon, MdOutlinePersonSearch as PersonSearch, MdOutlineMenu as MenuIcon,MdOutlineAccountCircle  as AccountCircle } from 'react-icons/md';
 
-export { ArrowFwd, HelpIcon, PersonSearch };
+export { ArrowFwd, HelpIcon, PersonSearch , MenuIcon,AccountCircle };
 

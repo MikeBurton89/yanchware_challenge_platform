@@ -3,6 +3,8 @@ import React from 'react';
 export const useSteps = (steps: React.ReactNode[]) => {
   const [activeStep, setActiveStep] = React.useState(0);
 
+  const stepComponent = steps[activeStep];
+
   const nextStep = () => {
     setActiveStep((prevActiveStep) =>
       prevActiveStep + 1 >= steps.length ? 0 : prevActiveStep + 1
@@ -24,5 +26,5 @@ export const useSteps = (steps: React.ReactNode[]) => {
   const isFirstStep = activeStep === 0;
 
 
-  return { activeStep, nextStep, prevStep, isLastStep, isFirstStep, goToStep };
+  return {stepComponent, activeStep, nextStep, prevStep, isLastStep, isFirstStep, goToStep };
 };
