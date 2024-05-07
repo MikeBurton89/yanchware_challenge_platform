@@ -11,7 +11,7 @@ const InnerLayout = ({ children, header, footer }: InnerLayoutProps) => {
   return (
     <MainCard>
       <Box sx={{ p: '2rem' }}>{header ? header : null}</Box>
-      <Stack direction={{ sm: 'column', md: 'row' }} spacing={{ xs: 2, sm: 2, md: 4 }}>
+      <Stack direction={{ sm: 'column', md: 'row' }} spacing={{ xs: 2, sm: 2, md: 4 }} justifyContent='center'>
         {children}
       </Stack>
       {footer ? footer : null}

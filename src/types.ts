@@ -2,6 +2,9 @@ export type City = {
   cityId: string;
   cityName: string;
   country: string;
+  internetSpeed?: number;
+  averageTemperature?: number;
+  timezone?: string;
 };
 
 export type CityDetail = {

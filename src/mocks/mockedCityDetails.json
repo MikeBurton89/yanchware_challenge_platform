@@ -26,7 +26,7 @@
         ],
         "safetyIndex": 75,
         "climate": {
-            "averageTemperature": 55,
+            "averageTemperature": 12.78,
             "rainfall": 43
         }
     },
@@ -57,7 +57,7 @@
         ],
         "safetyIndex": 85,
         "climate": {
-            "averageTemperature": 50,
+            "averageTemperature": 10,
             "rainfall": 23
         }
     },
@@ -88,7 +88,7 @@
         ],
         "safetyIndex": 90,
         "climate": {
-            "averageTemperature": 62,
+            "averageTemperature": 16.67,
             "rainfall": 61
         }
     },
@@ -119,7 +119,7 @@
         ],
         "safetyIndex": 80,
         "climate": {
-            "averageTemperature": 55,
+            "averageTemperature": 12.78,
             "rainfall": 24
         }
     },
@@ -150,7 +150,7 @@
         ],
         "safetyIndex": 85,
         "climate": {
-            "averageTemperature": 70,
+            "averageTemperature": 21.11,
             "rainfall": 47
         }
     },
@@ -181,7 +181,7 @@
         ],
         "safetyIndex": 75,
         "climate": {
-            "averageTemperature": 90,
+            "averageTemperature": 32.22,
             "rainfall": 3
         }
     }

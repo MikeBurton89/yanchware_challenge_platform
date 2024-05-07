@@ -1,13 +1,14 @@
 import { Card, CardContent, CardHeader, IconButton } from '@mui/material';
+import React from 'react';
 import { ArrowFwd } from '../../../components/icons';
 
-type SelectionCardProps = {
-  title: string;
-  icon: React.ReactNode;
+type CityCardProps = {
   onClick: () => void;
+  icon: React.ReactNode;
+  name: string;
 };
 
-const SelectionCard = ({ title, icon, onClick }: SelectionCardProps) => {
+const CityCard = ({ onClick, icon, name }: CityCardProps) => {
   return (
     <Card
       onClick={onClick}
@@ -24,7 +25,7 @@ const SelectionCard = ({ title, icon, onClick }: SelectionCardProps) => {
       <CardHeader
         titleTypographyProps={{ variant: 'h5', whiteSpace: 'wrap', overflow: 'hidden' }}
         avatar={icon}
-        title={title}
+        title={name}
       ></CardHeader>
       <CardContent>
         <IconButton sx={{ color: '#ee5502' }}>
@@ -35,4 +36,4 @@ const SelectionCard = ({ title, icon, onClick }: SelectionCardProps) => {
   );
 };
 
-export default SelectionCard;
+export default CityCard;

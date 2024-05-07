@@ -10,7 +10,7 @@ const FormLayout = ({ children, question }: FormLayoutProps) => {
   return (
     <Grid container direction="column" justifyContent="center" alignItems="center">
       <Grid item >
-        <Typography variant="h5" color="#0788d9" gutterBottom>
+        <Typography textAlign='center' variant="h5" color="#0788d9" gutterBottom>
           {question ? question : ''}
         </Typography>
       </Grid>

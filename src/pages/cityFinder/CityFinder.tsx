@@ -6,6 +6,7 @@ import TimezoneStep from './components/TimezoneStep';
 import AvgTempStep from './components/AvgTempStep';
 import StepperHeader from './components/StepperHeader';
 import StepperFooter from './components/StepperFooter';
+import { Container } from '@mui/material';
 
 export const CityFinder = () => {
   const steps = [<PresentationStep />, <TimezoneStep />, <InternetSpeedStep />, <AvgTempStep />];
@@ -25,7 +26,7 @@ export const CityFinder = () => {
         header={<StepperHeader activeStep={activeStep} steps={steps} />}
         footer={<StepperFooter {...footerProps} />}
       >
-        {stepComponent ? stepComponent : null}
+        <Container maxWidth='md'>{stepComponent ? stepComponent : null}</Container>
       </InnerLayout>
     </>
   );
