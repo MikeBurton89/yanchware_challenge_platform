@@ -5,7 +5,10 @@
  * @param property - The property to extract values from.
  * @param subProperty - Optional sub-property to extract values from.
  * @returns An object containing the minimum and maximum values.
+ * 
  */
+
+
 export const getMinAndMaxFromJson = <T>({
     json,
     property,
@@ -13,13 +16,13 @@ export const getMinAndMaxFromJson = <T>({
 }: {
     json: Array<T>;
     property: keyof T;
-    subProperty?: keyof T[keyof T] ;
+    subProperty?: keyof T[keyof T] | undefined;
 }) => {
 
     const { min, max } = json.reduce(
         (acc, curr) => {
             let value: number;
-            if (subProperty && curr[property][subProperty] !== undefined) {
+            if (subProperty && typeof curr[property] === 'object' && curr[property][subProperty] !== undefined) {
                 value = curr[property][subProperty] as number;
             } else {
                 value = curr[property] as number;

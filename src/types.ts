@@ -33,3 +33,4 @@ type coworkingSpace = {
   address: string;
   rating: number; //double
 };
+
