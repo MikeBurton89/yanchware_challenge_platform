@@ -9,10 +9,10 @@ export type CityDetail = {
   cityName: string;
   country: string;
   population: number;
-  timezone: string;
+  timezone: string; // UTC
   currency: string;
   language: string;
-  costOfLivingIndex: number;
+  costOfLivingIndex: number; 
   internetSpeed: {
     download: number;
     upload: number;
@@ -20,13 +20,13 @@ export type CityDetail = {
   coworkingSpaces: coworkingSpace[];
   safetyIndex: number;
   climate: {
-    averageTemperature: number;
-    rainfall: number;
+    averageTemperature: number; // Celsius
+    rainfall: number; // mm
   };
 };
 
 type coworkingSpace = {
   name: string;
   address: string;
-  rating: number;
+  rating: number; //double
 };

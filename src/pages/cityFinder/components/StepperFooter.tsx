@@ -16,14 +16,15 @@ const StepperFooter = ({ prevStep, nextStep, isFirstStep, isLastStep }: StepperF
       direction="row"
       sx={{
         justifyContent: 'space-between',
-        width: '100%',
+        alignItems: 'center',
         padding: '1rem',
       }}
     >
-      <Button onClick={isFirstStep ? () => navigate('/') : () => prevStep()} >
+      <Button size="large" onClick={isFirstStep ? () => navigate('/') : () => prevStep()}>
         {isFirstStep ? 'Home' : 'Previous'}
       </Button>
       <Button
+        size="large"
         variant="contained"
         onClick={isLastStep ? () => navigate('/cities') : () => nextStep()}
       >
