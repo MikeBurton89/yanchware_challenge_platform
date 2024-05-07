@@ -1,3 +1,4 @@
+
 export const getMinAndMaxFromJson = <T>({
     json,
     property,
