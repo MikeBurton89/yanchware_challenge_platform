@@ -8,7 +8,7 @@ type MainCardProps = {
 const MainCard = ({ children }: MainCardProps) => {
   return (
     <Box height={'100dvh'} display="grid" alignItems="center" justifyItems="center">
-      <Paper elevation={3} sx={{ p: { xs: '2rem', sm: '3rem', md: '3rem' } }}>
+      <Paper elevation={3} sx={{ p: { xs: '2rem', sm: '3rem', md: '3rem' }}}>
         {children}
       </Paper>
     </Box>
