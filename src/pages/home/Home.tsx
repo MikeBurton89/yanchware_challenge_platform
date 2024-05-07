@@ -25,7 +25,7 @@ export const Home = () => {
   return (
     <>
       <InnerLayout header={<TitleSection />}>
-        <Stack direction={{ sm: 'column', md: 'row' }} spacing={{ xs: 2, sm: 2, md: 4 }}>
+        <Stack direction="column" justifyContent="center" spacing={{ xs: 2, sm: 2, md: 4 }}>
           {selectionOptions.map((option, index) => (
             <SelectionCard key={index} {...option} />
           ))}

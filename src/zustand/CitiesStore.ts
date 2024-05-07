@@ -1,25 +1,50 @@
-import { createStore } from 'zustand';
-import { City } from '../types';
+import { create } from 'zustand';
+import { City, CityDetail } from '../types';
 
-// Define the type of the store
 export type CitiesStoreType = {
   cities: City[];
+  citiesDetails: CityDetail[];
   addCities: (cities: City[]) => void;
   addCity: (city: City) => void;
   removeCity: (cityId: string) => void;
+  updateCities: (cities: City[]) => void;
   clearCities: () => void;
 };
 
 // Create a store
-export const CitiesStore = createStore<CitiesStoreType>((set) => ({
+export const useCitiesStore = create<CitiesStoreType>((set) => ({
   cities: [],
+  citiesDetails: [],
+  updateCities: (cities: City[]) => set({ cities }),
   addCities: (cities: City[]) =>
     set((state) => ({
-      cities: [...state.cities, ...cities],
+      cities: [
+        ...state.cities,
+        ...cities.filter((c) => !state.cities.some((sc) => sc.cityId === c.cityId)),
+      ],
     })),
+  addCitiesDetails: (citiesDetails: CityDetail[]) => {
+    set((state) => ({
+      citiesDetails: [
+        ...state.citiesDetails,
+        ...citiesDetails.filter(
+          (cd) => !state.citiesDetails.some((scd) => scd.cityId === cd.cityId)
+        ),
+      ],
+    }));
+  },
+  addCityDetails: (cityDetail: CityDetail) => {
+    set((state) => ({
+      citiesDetails: !state.citiesDetails.some((cd) => cd.cityId === cityDetail.cityId)
+        ? [...state.citiesDetails, cityDetail]
+        : [...state.citiesDetails],
+    }));
+  },
   addCity: (city: City) =>
     set((state) => ({
-      cities: [...state.cities, city],
+      cities: !state.cities.some((c) => c.cityId === city.cityId)
+        ? [...state.cities, city]
+        : [...state.cities],
     })),
   removeCity: (cityId: string) =>
     set((state) => ({
