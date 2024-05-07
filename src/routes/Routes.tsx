@@ -3,9 +3,11 @@ import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-d
 import { CityFinder } from '../pages/cityFinder/CityFinder';
 import { Home } from '../pages/home/Home';
 import UserProfile from '../pages/userProfile/UserProfile';
+import NotFound from '../pages/404NotFound/404NotFound';
 
 const routes: RouteObject[] = [
-  { path: '/', index: true, element: <Home /> },
+  { path: '/*', element: <NotFound/>},
+  { path: '/', index: true, element: <Home />},
   { path: '/profile', element: <UserProfile />},
   { path: '/cityFinder', element: <CityFinder /> },
   {
@@ -19,7 +21,7 @@ const routes: RouteObject[] = [
       {
         path: ':cityId',
         element: <h1>City Details</h1>,
-        children: [],
+        errorElement: <h1>City Not Found</h1>,
       },
     ],
   },

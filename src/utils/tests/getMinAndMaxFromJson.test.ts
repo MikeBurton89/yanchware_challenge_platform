@@ -19,7 +19,7 @@ describe('getMinAndMaxFromJson', () => {
 
     // Should handle a JSON array with empty objects
     it('should return Infinity as minimum and -Infinity as maximum when the JSON array is empty', () => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        
         const json = [];
 
         const result = getMinAndMaxFromJson({ json, property: 'value' });
