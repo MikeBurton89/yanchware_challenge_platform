@@ -15,6 +15,7 @@ const AvgTempToggles = ({size= 'small'}:{size?: 'small' | 'large'}) => {
   const marks = getAvgTempRanges(min, max);
 
   const handleChipsClick = (e: React.MouseEvent<HTMLElement, MouseEvent>, value: string) => {
+    e.preventDefault();
     handleAddParams('avgTemperature', value ?? 0);
   };
   return (
