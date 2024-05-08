@@ -1,13 +1,14 @@
-import { MenuItem, Select } from '@mui/material';
+import { Box, MenuItem, Select } from '@mui/material';
 
-import { timezones } from '../utils/constants';
 import { useSearchParamsAsState } from '../hooks/useSearchParamsAsState';
+import { timezones } from '../utils/constants';
 
 const TimezonesSelect = () => {
   const { searchParams, handleAddParams } = useSearchParamsAsState();
 
   return (
-    <Select
+    <Box sx={{ minWidth: 120 }}>
+    <Select fullWidth
       size="small"
       variant='standard'
       id="timezone_select"
@@ -21,6 +22,7 @@ const TimezonesSelect = () => {
         </MenuItem>
       ))}
     </Select>
+  </Box>
   );
 };
 

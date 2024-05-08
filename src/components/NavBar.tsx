@@ -1,10 +1,10 @@
+import { Container } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { AccountCircle } from './icons';
 import { useNavigate } from 'react-router-dom';
+import { AccountCircle } from './icons';
 
 function NavBar() {
   const navigate = useNavigate();
@@ -12,21 +12,28 @@ function NavBar() {
   const goToProfile = () => {
     navigate('/profile');
   };
+
+  const goToHome = () => {
+    navigate('/');
+  };
   return (
-    <Box sx={{ flexGrow: 1, width: '100%' }}>
-      <AppBar position="static">
+    <Container sx={{color:'#fff'}} color="secondary">
+      <AppBar color="transparent" elevation={0} position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            CityFinder
-          </Typography>
-          <div>
-            <IconButton size="large" onClick={goToProfile} color="inherit">
-              <AccountCircle />
-            </IconButton>
-          </div>
+            <Typography
+              onClick={goToHome}
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, cursor: 'pointer' }}
+            >
+              CityFinder
+            </Typography>
+          <IconButton size="large" onClick={goToProfile} color="inherit">
+            <AccountCircle />
+          </IconButton>
         </Toolbar>
       </AppBar>
-    </Box>
+    </Container>
   );
 }
 export default NavBar;

@@ -1,9 +1,9 @@
 import { Button, Card, CardContent, CardHeader, FormControl, Input, Stack } from '@mui/material';
 import { Form } from 'react-router-dom';
-import { useSearchParamsAsState } from '../../../hooks/useSearchParamsAsState';
-import InternetSpeedSlider from '../../../components/InternetSpeedSlider';
 import AvgTempToggles from '../../../components/AvgTempToggles';
+import InternetSpeedSlider from '../../../components/InternetSpeedSlider';
 import TimezonesSelect from '../../../components/TimezonesSelect';
+import { useSearchParamsAsState } from '../../../hooks/useSearchParamsAsState';
 
 const SearchAndFilter = () => {
   const { searchParams, handleAddParams, resetParams } = useSearchParamsAsState();
