@@ -1,5 +1,5 @@
 import mockedCityDetails from '../mocks/mockedCityDetails.json';
-export async function getDetailsForFilter(cityId: string): Promise<{
+export default async function getDetailsForFilter(cityId: string): Promise<{
   averageTemperature: number;
   internetSpeed: number;
   timezone: string;
@@ -8,14 +8,20 @@ export async function getDetailsForFilter(cityId: string): Promise<{
     try{
       setTimeout(() => {
         const cityDetail = mockedCityDetails.find((cityDetail) => cityDetail.cityId === cityId);
-        if (!cityDetail) return reject(new Error('City not found'));
-        const filterDetails = {
-          averageTemperature: cityDetail.climate.averageTemperature,
-          internetSpeed: cityDetail.internetSpeed.download,
-          timezone: cityDetail.timezone,
-        };
-        console.log("🚀 ~ setTimeout ~ filterDetails:", filterDetails)
-        resolve(filterDetails);
+        if (!cityDetail) {
+          // return default values
+          resolve({
+            averageTemperature: 0,
+            internetSpeed: 0,
+            timezone: "",
+          });
+        }
+    
+        resolve({
+          averageTemperature: cityDetail?.climate.averageTemperature ?? 0,
+          internetSpeed: cityDetail?.internetSpeed.download ?? 0,
+          timezone: cityDetail?.timezone ?? '',
+        });
       }, 1000);
     }catch(e){
       reject(e);

@@ -9,7 +9,7 @@ export default function getCityDetails(cityId: string): Promise<CityDetail> {
           (cityDetail: CityDetail) => cityDetail.cityId === cityId
         );
         if (!cityDetail) {
-          reject(new Error('City not found'));
+          reject(new Error('No City Id found'));
         } else {
           resolve(cityDetail);
         }
