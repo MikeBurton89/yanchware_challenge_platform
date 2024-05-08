@@ -1,6 +1,6 @@
 import mockedCities from '../mocks/mockedCities.json';
 import { City } from '../types';
-import { getDetailsForFilter } from './getDetailsForFilter';
+import getDetailsForFilter from './getDetailsForFilter';
 
 export default async function getCities(): Promise<City[]> {
   // eslint-disable-next-line no-async-promise-executor
