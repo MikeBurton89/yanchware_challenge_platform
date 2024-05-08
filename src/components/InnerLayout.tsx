@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import { Box, Stack } from '@mui/material';
+import { ReactNode } from 'react';
 import MainCard from './MainCard';
 
 type InnerLayoutProps = {
