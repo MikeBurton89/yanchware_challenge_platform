@@ -1,46 +1,43 @@
-
-/**
- * Returns the minimum and maximum values of a specified property in an array of objects.
- * @param json - The array of objects.
- * @param property - The property to extract values from.
- * @param subProperty - Optional sub-property to extract values from.
- * @returns An object containing the minimum and maximum values.
- * 
- */
-
-
 export const getMinAndMaxFromJson = <T>({
-    json,
-    property,
-    subProperty,
+  json,
+  property,
+  subProperty,
 }: {
-    json: Array<T>;
-    property: keyof T;
-    subProperty?: keyof T[keyof T] | undefined;
+  json: Array<T>;
+  property: keyof T;
+  subProperty?: keyof T[keyof T] | undefined;
 }) => {
+  const { min, max } = json.reduce(
+    (acc, curr) => {
+      let value: number;
+      if (
+        subProperty &&
+        typeof curr[property] === 'object' &&
+        curr[property][subProperty] !== undefined
+      ) {
+        value = typeof curr[property][subProperty] === 'string' ? parseInt(curr[property][subProperty] as string) : curr[property][subProperty] as number;
+      } else {
+        value = typeof curr[property] === 'string' ? parseInt(curr[property] as string) : curr[property] as number;
 
-    const { min, max } = json.reduce(
-        (acc, curr) => {
-            let value: number;
-            if (subProperty && typeof curr[property] === 'object' && curr[property][subProperty] !== undefined) {
-                value = curr[property][subProperty] as number;
-            } else {
-                value = curr[property] as number;
-            }
+      }
 
-            if (value < acc.min) {
-                acc.min = value;
-            }
-            if (value > acc.max) {
-                acc.max = value;
-            }
+      if (isNaN(value) || !isFinite(value) || value === null || value === undefined) {
+        return acc;
+      }
 
-            return acc;
-        },
-        { min: Infinity, max: -Infinity }
-    );
+      if (value < acc.min) {
+        acc.min = value;
+      }
+      if (value > acc.max) {
+        acc.max = value;
+      }
 
-    return { min, max };
+      return acc;
+    },
+    { min: Infinity, max: -Infinity }
+  );
+
+  return { min, max };
 };
 
 /**

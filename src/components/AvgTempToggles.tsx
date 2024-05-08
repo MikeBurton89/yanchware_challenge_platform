@@ -1,9 +1,9 @@
-import { ToggleButtonGroup, ToggleButton } from '@mui/material';
+import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { useSearchParamsAsState } from '../hooks/useSearchParamsAsState';
-import { getAvgTempRanges, getMinAndMaxFromJson } from '../utils/utilsFunctions';
 import mockedCityDetails from '../mocks/mockedCityDetails.json';
+import { getAvgTempRanges, getMinAndMaxFromJson } from '../utils/utilsFunctions';
 
-const AvgTempToggles = ({size= 'small'}:{size?: 'small' | 'large'}) => {
+const AvgTempToggles = ({ size = 'small' }: { size?: 'small' | 'large' }) => {
   const { searchParams, handleAddParams } = useSearchParamsAsState();
   const { min, max } = getMinAndMaxFromJson({
     json: mockedCityDetails,
@@ -16,7 +16,9 @@ const AvgTempToggles = ({size= 'small'}:{size?: 'small' | 'large'}) => {
 
   const handleChipsClick = (e: React.MouseEvent<HTMLElement, MouseEvent>, value: string) => {
     e.preventDefault();
-    handleAddParams('avgTemperature', value ?? 0);
+    if(!value) handleAddParams('avgTemperature', '0');
+    if (parseInt(value) >= min && parseInt(value) <= max) handleAddParams('avgTemperature', value);
+    else handleAddParams('avgTemperature', '0');
   };
   return (
     <ToggleButtonGroup

@@ -12,6 +12,13 @@ const InternetSpeedSlider = () => {
     // TODO: Fix this hack
     subProperty: 'download' as unknown as undefined,
   });
+  const handleSliderChange = (e: Event, value: number | number[]) => {
+    e.preventDefault();
+    if(!value) handleAddParams('internetSpeed', '0');
+    if (parseInt(value.toString()) >= internetMin && parseInt(value.toString()) <= internetMax) handleAddParams('internetSpeed', value.toString());
+    else handleAddParams('internetSpeed', '0');
+  }
+
   return (
     <Slider
       id="internet_slider"
@@ -20,7 +27,7 @@ const InternetSpeedSlider = () => {
           ? parseInt(searchParams.get('internetSpeed') as string)
           : 0
       }
-      onChange={(_, value) => handleAddParams('internetSpeed', value.toString())}
+      onChange={handleSliderChange}
       valueLabelDisplay="on"
       step={10}
       sx={{ width: '80%' }}
