@@ -1,7 +1,7 @@
 import mockedCityDetails from '../mocks/mockedCityDetails.json';
 import { CityDetail } from '../types';
 
-export default function getCityDetails(cityId: string): Promise<CityDetail> {
+export default function getCityDetails(cityId: string | undefined): Promise<CityDetail> {
   return new Promise((resolve, reject) => {
     try {
       setTimeout(() => {
