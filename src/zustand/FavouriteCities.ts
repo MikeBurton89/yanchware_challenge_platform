@@ -6,11 +6,12 @@ export type FavouriteCitiesStore = {
   selectedCities: City[];
   addCityToFav: (city: City) => void;
   removeCityFromFav: (cityId: string) => void;
+  toggleCity: (city: City) => void;
 };
 
 export const useFavouriteCities = create<FavouriteCitiesStore>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       selectedCities: [],
       addCityToFav: (city: City) =>
         set((state) => ({
@@ -20,6 +21,14 @@ export const useFavouriteCities = create<FavouriteCitiesStore>()(
         set((state) => ({
           selectedCities: state.selectedCities.filter((c) => c.cityId !== cityId),
         })),
+        toggleCity: (city: City) => {
+          const isCityInFav = get().selectedCities.some((c) => c.cityId === city.cityId);
+          if (isCityInFav) {
+            get().removeCityFromFav(city.cityId);
+          } else {
+            get().addCityToFav(city);
+          }
+        }
     }),
     {
       name: 'favourite-cities',

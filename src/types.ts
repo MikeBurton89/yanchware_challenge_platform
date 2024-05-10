@@ -28,7 +28,7 @@ export type CityDetail = {
   };
 };
 
-type coworkingSpace = {
+export type coworkingSpace = {
   name: string;
   address: string;
   rating: number; //double

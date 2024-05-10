@@ -12,7 +12,7 @@ const City = () => {
     <>
     <InnerLayout
         header={
-            <CityDetailsHeader cityName={data?.cityName} />
+            <CityDetailsHeader cityName={data?.cityName} cityId={cityId ?? ''}/>
         }
     >
         <Grid p={2} container spacing={2} justifyContent="center">

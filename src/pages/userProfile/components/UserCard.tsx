@@ -5,7 +5,7 @@ const UserCard = () => {
   return (
     <Card sx={{ width: { xs: '100%', md: '50%' }, mt: '2rem' }}>
       <CardContent>
-        <Typography variant="h3" component="h2" gutterBottom>
+        <Typography variant="h5" component="h2" gutterBottom>
           User Details
         </Typography>
         <Divider sx={{ my: '1rem' }} />

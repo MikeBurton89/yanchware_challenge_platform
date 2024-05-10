@@ -1,60 +1,70 @@
 import { Grid, Typography } from '@mui/material';
-import { CityDetail } from '../../../types';
+import { CityDetail, coworkingSpace } from '../../../types';
+import { camelCaseToTitleCase } from '../../../utils/utilsFunctions';
+import { CityDetailComponent } from './CityDetailComponent';
 
 type CityDetailsProps = {
   cityDetails: CityDetail;
 };
 
 const CityDetails = ({ cityDetails }: CityDetailsProps) => {
+  // TODO: Find a less verbose way to render the city details
   const renderCityDetails = () => {
-    return Object.entries(cityDetails).map(([key, value]) => {
-      // Exclude cityId and coworkingSpaces from rendering
-      if (key === 'cityId') return null;
-
-      // Special handling for internetSpeed and climate objects
-      if (key === 'internetSpeed' || key === 'climate') {
-        return (
-          <Grid item xs={12} sm={6} key={key}>
-            <Typography color='primary' variant="h5">{key}</Typography>
-            <Grid container spacing={1}>
-              {Object.entries(value).map(([subKey, subValue]) => (
-                <Grid item xs={12} key={subKey}>
-                  <Typography variant="body1">{`${subKey}: ${subValue}`}</Typography>
+    return Object.entries(cityDetails)
+      .filter(([key]) => {
+        return key !== 'cityId' && key !== 'cityName';
+      })
+      .map(([key, value]) => {
+        if (key === 'internetSpeed' || key === 'climate') {
+          return (
+            <CityDetailComponent
+              key={key}
+              title={camelCaseToTitleCase(key)}
+              content={
+                <Grid container spacing={1}>
+                  {Object.entries(value).map(([subKey, subValue]) => (
+                    <Grid item xs={12} key={subKey}>
+                      <Typography variant="body1">{`${subKey}: ${subValue}`}</Typography>
+                    </Grid>
+                  ))}
                 </Grid>
-              ))}
-            </Grid>
-          </Grid>
-        );
-      }
-      if(key === 'coworkingSpaces') {
-        return (
-          <Grid item xs={12} sm={6} key={key}>
-            <Typography color='primary' variant="h5">{key}</Typography>
-            <Grid container spacing={1}>
-              {value?.map((coworkingSpace, index) => (
-                <Grid item xs={12} key={index}>
-                  <Typography variant="body1">{coworkingSpace.name}</Typography>
-                  <Typography variant="body1">{coworkingSpace.address}</Typography>
-                  <Typography variant="body1">{`Rating: ${coworkingSpace.rating}`}</Typography>
+              }
+            />
+          );
+        }
+        if (key === 'coworkingSpaces') {
+          return (
+            <CityDetailComponent
+              key={key}
+              title={key}
+              content={
+                <Grid container spacing={1}>
+                  {Array.isArray(value) &&
+                    value.map((coworkingSpace: coworkingSpace, index: number) => (
+                      <Grid item xs={12} key={index}>
+                        <Typography variant="body1">{coworkingSpace.name}</Typography>
+                        <Typography variant="body1">{coworkingSpace.address}</Typography>
+                        <Typography variant="body1">{`Rating: ${coworkingSpace.rating}`}</Typography>
+                      </Grid>
+                    ))}
                 </Grid>
-              ))}
-            </Grid>
-          </Grid>
-        );
-      }
+              }
+            />
+          );
+        }
 
-      // For other details
-      return (
-        <Grid item xs={12} sm={6} key={key}>
-          <Typography color="primary" variant="h5">
-            {key}
-          </Typography>
-          <Typography variant="body1" color="">
-            {value}
-          </Typography>
-        </Grid>
-      );
-    });
+        return (
+          <CityDetailComponent
+            key={key}
+            title={camelCaseToTitleCase(key)}
+            content={
+              <Typography variant="body1" color="">
+                {String(value)}
+              </Typography>
+            }
+          />
+        );
+      });
   };
 
   return (
