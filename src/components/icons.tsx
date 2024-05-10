@@ -1,5 +1,13 @@
-import { MdArrowForward as ArrowFwd, MdOutlineHelp as HelpIcon, MdOutlinePersonSearch as PersonSearch, MdOutlineMenu as MenuIcon,MdOutlineAccountCircle  as AccountCircle , MdLocationCity as CityIcon} from 'react-icons/md';
-import { GiVintageRobot as RobotIcon } from "react-icons/gi";
+import { GiVintageRobot as RobotIcon } from 'react-icons/gi';
+import {
+    MdOutlineAccountCircle as AccountCircle,
+    MdArrowForward as ArrowFwd,
+    MdArrowBack as BackIcon,
+    MdLocationCity as CityIcon,
+    MdOutlineHelp as HelpIcon,
+    MdOutlineMenu as MenuIcon,
+    MdOutlinePersonSearch as PersonSearch,
+} from 'react-icons/md';
 
-export { ArrowFwd, HelpIcon, PersonSearch , MenuIcon,AccountCircle, RobotIcon, CityIcon };
+export { AccountCircle, ArrowFwd, BackIcon, CityIcon, HelpIcon, MenuIcon, PersonSearch, RobotIcon };
 

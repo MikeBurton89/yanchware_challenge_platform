@@ -1,4 +1,4 @@
-import { Stack, Typography } from '@mui/material';
+import { CircularProgress, Stack, Typography } from '@mui/material';
 import InnerLayout from '../../components/InnerLayout';
 import useFetchCities from '../../hooks/useFetchCities';
 import CityList from './components/CityList';
@@ -18,7 +18,7 @@ const Cities = () => {
           alignItems="center"
         >
           <SearchAndFilter />
-          {isLoading && <Typography>Loading...</Typography>}
+          {isLoading && <CircularProgress/>}
           {error && <Typography>Error: {error.message}</Typography>}
           {!isLoading && !error && <CityList />}
         </Stack>

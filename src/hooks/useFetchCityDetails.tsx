@@ -3,7 +3,7 @@ import getCityDetails from '../api/getCityDetails';
 
 const useFetchCityDetails = ({ cityId }: { cityId: string | undefined }) => {
   const { data, isLoading, error } = useQuery({
-    queryKey: ['cityDetails'],
+    queryKey: ['cityDetails', cityId],
     queryFn: () => {
       const response = getCityDetails(cityId);
       return response;
