@@ -1,6 +1,7 @@
 # Yanchware Challenge
 
 This application is built using Vite and React, and it is a simple web application that allows users to search for a new city.
+More extensive documentation can be found [here](https://github.com/MikeBurton89/yanchware_challenge_platform/blob/main/Docs.MD)
 
 ## Installation
 
@@ -35,6 +36,7 @@ npm run test or yarn test
 - The appliction uses Material Ui as a design system.
 - The application uses mocked data that are present in 2 json files to mock API calls since there's no api present at the moment.
 - The application is deployed on Vercel and can be accessed [here](https://yanchware-challenge-platform-kuai.vercel.app/).
+
 
 
 
